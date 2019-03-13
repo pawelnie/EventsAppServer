@@ -17,11 +17,11 @@ public class BlogController {
         return blogRespository.findAll();
     }
 
-//    @GetMapping("/blog/{id}")
-//    public Blog show(@PathVariable String id){
-//        int blogId = Integer.parseInt(id);
-//        return blogRespository.findOne(blogId);
-//    }
+    @GetMapping("/blog/{id}")
+    public Blog show(@PathVariable String id){
+        int blogId = Integer.parseInt(id);
+        return blogRespository.findById(blogId).get();
+    }
 
     @PostMapping("/blog/search")
     public List<Blog> search(@RequestBody Map<String, String> body){
@@ -36,22 +36,22 @@ public class BlogController {
         return blogRespository.save(new Blog(title, content));
     }
 
-//    @PutMapping("/blog/{id}")
-//    public Blog update(@PathVariable String id, @RequestBody Map<String, String> body){
-//        int blogId = Integer.parseInt(id);
-//        // getting blog
-//        Blog blog = blogRespository.findOne(blogId);
-//        blog.setTitle(body.get("title"));
-//        blog.setContent(body.get("content"));
-//        return blogRespository.save(blog);
-//    }
+    @PutMapping("/blog/{id}")
+    public Blog update(@PathVariable String id, @RequestBody Map<String, String> body){
+        int blogId = Integer.parseInt(id);
+        // getting blog
+        Blog blog = blogRespository.findById(blogId).get();
+        blog.setTitle(body.get("title"));
+        blog.setContent(body.get("content"));
+        return blogRespository.save(blog);
+    }
 
-//    @DeleteMapping("blog/{id}")
-//    public boolean delete(@PathVariable String id){
-//        int blogId = Integer.parseInt(id);
-//        blogRespository.delete(blogId);
-//        return true;
-//    }
+    @DeleteMapping("blog/delete/{id}")
+    public boolean delete(@PathVariable String id){
+        int blogId = Integer.parseInt(id);
+        blogRespository.delete(blogRespository.findById(blogId).get());
+        return true;
+    }
 
 
 }
