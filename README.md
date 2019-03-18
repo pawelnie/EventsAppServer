@@ -6,10 +6,10 @@ Check http://medium.com/@salisuwy
 
 CREATE DATABASE restapi;
 USE restapi;
-CREATE TABLE blog (
+CREATE TABLE event (
   id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
   title VARCHAR(500) NOT NULL,
-  content VARCHAR(5000) NOT NULL
+  description VARCHAR(5000) NOT NULL
 );
 
 
@@ -18,8 +18,8 @@ use restapi;
 show tables;
 
 
-INSERT INTO `blog` 
-(`id`,`title`,`content`) 
+INSERT INTO `event` 
+(`id`,`title`,`description`) 
 VALUES 
 (NULL, "New iPhoneX features", "blah blah blah.....");
 

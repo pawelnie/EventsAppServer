@@ -1,27 +1,26 @@
-package me.salisuwy;
+package eventsapp;
 
 import javax.persistence.*;
 
 @Entity
-public class Blog {
+public class Event {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
-
     private String title;
-    private String content;
+    private String description;
 
-    public Blog() {  }
+    public Event() {  }
 
-    public Blog(String title, String content) {
+    public Event(String title, String description) {
         this.setTitle(title);
-        this.setContent(content);
+        this.setDescription(description);
     }
 
-    public Blog(int id, String title, String content) {
+    public Event(int id, String title, String description) {
         this.setId(id);
         this.setTitle(title);
-        this.setContent(content);
+        this.setDescription(description);
     }
 
     public int getId() {
@@ -40,20 +39,20 @@ public class Blog {
         this.title = title;
     }
 
-    public String getContent() {
-        return content;
+    public String getDescription() {
+        return description;
     }
 
-    public void setContent(String content) {
-        this.content = content;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     @Override
     public String toString() {
-        return "Blog{" +
+        return "Event{" +
                 "id=" + id +
                 ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
+                ", description='" + description + '\'' +
                 '}';
     }
 }
