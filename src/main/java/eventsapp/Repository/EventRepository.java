@@ -20,13 +20,13 @@ public interface EventRepository extends JpaRepository<Event, Integer> {
     List<Event> findQueryWithParameter(String text);
 
     @Query(value = "SELECT * FROM event\n" +
-            "where event.id in (select EventID from signup where userID = %?1);", nativeQuery = true)
-    List<Event> findQueryWithInt(Integer text);
+            "where event.id in (select EventID from signup where userID = ?1);", nativeQuery = true)
+    List<Event> findEventByUserID(Integer text);
 
 
 //    Query for finding event by user ID
 //    SELECT * FROM event
-//    where event.id in (select EventID from signup where userID = 1)
+//    where event.id in (select EventID from signUp where userID = 1)
 
 
 //    List<Event> findByTitleContaining(String text, String textAgain);

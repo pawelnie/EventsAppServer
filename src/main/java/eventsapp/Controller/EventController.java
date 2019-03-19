@@ -56,7 +56,7 @@ public class EventController {
     @PostMapping("/event/search4")
     public List<Event> search3(@RequestBody Map<String, Integer> text) {
         Integer searchTerm3 = text.get("text");
-        return eventRepository.findQueryWithInt(searchTerm3);
+        return eventRepository.findEventByUserID(searchTerm3);
     }
 
 
