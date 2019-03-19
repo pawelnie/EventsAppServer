@@ -31,9 +31,49 @@ public class EventController {
 
     @PostMapping("/event/search")
     public List<Event> search(@RequestBody Map<String, String> body){
-        String searchTerm = body.get("text");
-        return eventRepository.findByTitleContainingOrDescriptionContaining(searchTerm, searchTerm);
+        String searchTerm = body.get("title");
+        String searchTerm2 = body.get("description");
+        return eventRepository.findByTitleContainingOrDescriptionContaining(searchTerm, searchTerm2);
     }
+
+    /**TESTOWE QUERY - wyszukuje obiekty z title = "new" **/
+    @PostMapping("/event/search2")
+    public List<Event> search() {
+        return eventRepository.findNewEvents();
+    }
+
+
+    /**TESTOWE QUERY2**/
+
+    @PostMapping("/event/search3")
+    public List<Event> search2(@RequestBody Map<String, String> text) {
+        String searchTerm3 = text.get("text");
+        return eventRepository.findQueryWithParameter(searchTerm3);
+    }
+
+    /**TESTOWE QUERY3**/
+
+    @PostMapping("/event/search4")
+    public List<Event> search3(@RequestBody Map<String, Integer> text) {
+        Integer searchTerm3 = text.get("text");
+        return eventRepository.findQueryWithInt(searchTerm3);
+    }
+
+
+//    @PostMapping("/event/search2")
+//    public List<Event> search2(@RequestBody Map<String, String> body){
+//        String searchTerm = body.get("title");
+//        String searchTerm2 = body.get("description");
+//        return eventRepository.findByTitleContaining(searchTerm, searchTerm2);
+//    }
+
+
+
+//    @PostMapping("/event/search2")
+//    public List<Event> search2(@RequestBody Map<String, String> body){
+//        String searchTerm = body.get("text");
+//        return eventRepository.findByTitle(searchTerm, searchTerm);
+//    }
 
     @PostMapping("/event")
     public Event create(@RequestBody Map<String, String> body){
@@ -51,6 +91,8 @@ public class EventController {
         event.setDescription(body.get("description"));
         return eventRepository.save(event);
     }
+
+
 
     @DeleteMapping("event/delete/{id}")
     public boolean delete(@PathVariable String id){
