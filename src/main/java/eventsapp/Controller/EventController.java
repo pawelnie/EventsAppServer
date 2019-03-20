@@ -1,6 +1,6 @@
 package eventsapp.Controller;
 
-import eventsapp.Event;
+import eventsapp.entity.Event;
 import eventsapp.Repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
