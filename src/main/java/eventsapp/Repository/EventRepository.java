@@ -12,7 +12,7 @@ public interface EventRepository extends JpaRepository<Event, Integer> {
 
     List<Event> findByTitleContainingOrDescriptionContaining(String text, String textAgain);
 
-    @Query(value = "SELECT * FROM event WHERE event.title = 'new'", nativeQuery = true)
+    @Query(value = "SELECT * FROM event WHERE event.title = 'Cooking'", nativeQuery = true)
             List<Event> findNewEvents();
 
     @Query(value = "SELECT * FROM event WHERE event.description LIKE %?1", nativeQuery = true)
