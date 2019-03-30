@@ -22,7 +22,7 @@ public class EventController {
     /**Get all events**/
     @GetMapping("/event")
     public List<Event> index(){
-        return eventRepository.findAll();
+        return eventRepository.findAllEvents();
     }
 
     /**Get single event with {id}**/
@@ -36,7 +36,7 @@ public class EventController {
     /**Get all events assigned to user {id}**/
     @PostMapping("/event/userevents/{id}")
     public List<Event> userevents(@PathVariable String id) {
-        Integer searchTerm3 = Integer.parseInt(id);
+        int searchTerm3 = Integer.parseInt(id);
         return eventRepository.findEventByUserID(searchTerm3);
     }
 

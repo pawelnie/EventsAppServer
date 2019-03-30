@@ -16,7 +16,7 @@ public class Event {
     private String category1;
     private String category2;
     private String category3;
-    private String signup;
+    private String signupid;
     private String userid;
     private String eventid;
 
@@ -44,11 +44,11 @@ public class Event {
     }
 
 
-    public void setSignup(String signup) {
-        this.signup = signup;
+    public void setSignupid(String signupid) {
+        this.signupid = signupid;
     }
-    public String getSignup() {
-        return signup;
+    public String getSignupid() {
+        return signupid;
     }
 
 
@@ -171,7 +171,7 @@ public class Event {
                 ", category1='" + category1 + '\'' +
                 ", category2='" + category2 + '\'' +
                 ", category3='" + category3 + '\'' +
-                ", signup'" + signup + '\'' +
+                ", signupid'" + signupid + '\'' +
                 '}';
     }
 }

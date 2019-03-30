@@ -5,7 +5,7 @@ import javax.persistence.*;
 public class Signup {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int singupid;
+    private int signupid;
     private int userid;
     private int eventid;
 
@@ -17,8 +17,8 @@ public class Signup {
     }
 
 
-    public int getSingupid() {
-        return singupid;
+    public int getSignupid() {
+        return signupid;
     }
 
     public int getUserid() {
@@ -40,7 +40,7 @@ public class Signup {
     @Override
     public String toString() {
         return "Signup{" +
-                "singupid=" + singupid +
+                "signupid=" + signupid +
                 ", userid=" + userid +
                 ", eventid=" + eventid +
                 '}';

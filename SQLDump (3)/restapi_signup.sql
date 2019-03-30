@@ -16,13 +16,13 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `signup`
+-- Table structure for table `signupid`
 --
 
-DROP TABLE IF EXISTS `signup`;
+DROP TABLE IF EXISTS `signupid`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
  SET character_set_client = utf8mb4 ;
-CREATE TABLE `signup` (
+CREATE TABLE `signupid` (
   `singupid` int(11) NOT NULL AUTO_INCREMENT,
   `userid` int(11) NOT NULL,
   `eventid` int(11) NOT NULL,
@@ -35,13 +35,13 @@ CREATE TABLE `signup` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `signup`
+-- Dumping data for table `signupid`
 --
 
-LOCK TABLES `signup` WRITE;
-/*!40000 ALTER TABLE `signup` DISABLE KEYS */;
-INSERT INTO `signup` VALUES (1,1,1),(2,1,2),(3,1,3),(4,1,4),(5,2,3),(6,2,4),(7,3,1),(8,3,2),(9,3,3),(10,4,1),(11,4,4),(12,5,2);
-/*!40000 ALTER TABLE `signup` ENABLE KEYS */;
+LOCK TABLES `signupid` WRITE;
+/*!40000 ALTER TABLE `signupid` DISABLE KEYS */;
+INSERT INTO `signupid` VALUES (1,1,1),(2,1,2),(3,1,3),(4,1,4),(5,2,3),(6,2,4),(7,3,1),(8,3,2),(9,3,3),(10,4,1),(11,4,4),(12,5,2);
+/*!40000 ALTER TABLE `signupid` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
