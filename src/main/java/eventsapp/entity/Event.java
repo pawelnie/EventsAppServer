@@ -16,6 +16,9 @@ public class Event {
     private String category1;
     private String category2;
     private String category3;
+    private String signup;
+    private String userid;
+    private String eventid;
 
     public Event() {  }
 
@@ -40,6 +43,13 @@ public class Event {
 
     }
 
+
+    public void setSignup(String signup) {
+        this.signup = signup;
+    }
+    public String getSignup() {
+        return signup;
+    }
 
 
     public int getId() {
@@ -131,6 +141,22 @@ public class Event {
         this.category3 = category3;
     }
 
+    public String getUserid() {
+        return userid;
+    }
+
+    public void setUserid(String userid) {
+        this.userid = userid;
+    }
+
+    public String getEventid() {
+        return eventid;
+    }
+
+    public void setEventid(String eventid) {
+        this.eventid = eventid;
+    }
+
     @Override
     public String toString() {
         return "Event{" +
@@ -145,6 +171,7 @@ public class Event {
                 ", category1='" + category1 + '\'' +
                 ", category2='" + category2 + '\'' +
                 ", category3='" + category3 + '\'' +
+                ", signup'" + signup + '\'' +
                 '}';
     }
 }

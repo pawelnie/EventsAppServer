@@ -18,9 +18,14 @@ public interface EventRepository extends JpaRepository<Event, Integer> {
     @Query(value = "SELECT * FROM event WHERE event.description LIKE %?1", nativeQuery = true)
     List<Event> findQueryWithParameter(String text);
 
-    @Query(value = "SELECT * FROM event\n" +
-            "where event.id in (select EventID from signup where userID = ?1);", nativeQuery = true)
+    @Query(value = "SELECT * FROM event INNER JOIN signup ON (event.id = signup.eventid WHERE signup.userid = ?1);", nativeQuery = true)
     List<Event> findEventByUserID(Integer text);
+
+//
+//    @Query(value = "SELECT * FROM event\n" +
+//            "where event.id in (select EventID from signup where userID = ?1);", nativeQuery = true)
+//    List<Event> findEventByUserID(Integer text);
+//
 
 
 //    Query for finding event by user ID
