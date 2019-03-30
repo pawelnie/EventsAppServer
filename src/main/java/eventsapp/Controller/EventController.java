@@ -82,11 +82,11 @@ public class EventController {
 
     /**Redundant, better one for finding EventByID is available above
      * Get all events assigned to user, user id provided in json**/
-    @PostMapping("/event/search4")
-    public List<Event> search3(@RequestBody Map<String, Integer> text) {
-        Integer searchTerm3 = text.get("text");
-        return eventRepository.findEventByUserID(searchTerm3);
-    }
+//    @PostMapping("/event/search4")
+//    public List<Event> search3(@RequestBody Map<String, Integer> text) {
+//        Integer searchTerm3 = text.get("text");
+//        return eventRepository.findEventByUserID(searchTerm3);
+//    }
 
 
     /**TESTOWE QUERY2
