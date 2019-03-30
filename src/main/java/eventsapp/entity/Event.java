@@ -1,5 +1,4 @@
 package eventsapp.entity;
-
 import javax.persistence.*;
 
 @Entity
