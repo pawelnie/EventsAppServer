@@ -25,6 +25,11 @@ public class EventController {
         return eventRepository.findAllEvents();
     }
 
+    @GetMapping("/eventALL")
+    public List<Event> indexALL(){
+        return eventRepository.findAll();
+    }
+
     /**Get single event with {id}**/
     @GetMapping("/event/{id}")
     public Event show(@PathVariable String id){
