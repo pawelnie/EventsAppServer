@@ -1,10 +1,12 @@
 package eventsapp.Controller;
 
 import eventsapp.Repository.UserRepository;
+import eventsapp.entity.Event;
 import eventsapp.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
 import java.util.Map;
 
 @RestController
@@ -19,6 +21,8 @@ public class UserController {
         return userRepository.findById(userId).get();
     }
 
+
+
     @PostMapping("/user")
     public User create(@RequestBody Map<String, String> body){
         String fireid = body.get("fireid");
@@ -30,5 +34,12 @@ public class UserController {
         String email = body.get("email");
         String phone = body.get("phone");
         return userRepository.save(new User(fireid, lastname, firstname, username, birthdate, homelocation, email, phone));
+    }
+
+    /**Get User id by his fireid**/
+    @GetMapping("/user/id/{fireid}")
+    public List<User> userevents(@PathVariable String fireid) {
+        String searchTerm = fireid;
+        return userRepository.finUserId(searchTerm);
     }
 }

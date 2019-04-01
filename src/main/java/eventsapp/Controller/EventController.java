@@ -67,54 +67,6 @@ public class EventController {
      *OTHER QUERIES BELOW
      **/
 
-
-
-    /**Query not prepared by me, probably not working**/
-    @PostMapping("/event/search")
-    public List<Event> search(@RequestBody Map<String, String> body){
-        String searchTerm = body.get("title");
-        String searchTerm2 = body.get("description");
-        return eventRepository.findByTitleContainingOrDescriptionContaining(searchTerm, searchTerm2);
-    }
-
-    /**TESTOWE QUERY - wyszukuje obiekty z title = "new"
-     * chyba nie dziala**/
-    @PostMapping("/event/search2")
-    public List<Event> search() {
-        return eventRepository.findNewEvents();
-    }
-
-
-    /**Redundant, better one for finding EventByID is available above
-     * Get all events assigned to user, user id provided in json**/
-//    @PostMapping("/event/search4")
-//    public List<Event> search3(@RequestBody Map<String, Integer> text) {
-//        Integer searchTerm3 = text.get("text");
-//        return eventRepository.findEventByUserID(searchTerm3);
-//    }
-
-
-    /**TESTOWE QUERY2
-     * wyszukuje po slowie w title, dane serwowane w json**/
-
-    @PostMapping("/event/search3")
-    public List<Event> search2(@RequestBody Map<String, String> text) {
-        String searchTerm3 = text.get("text");
-        return eventRepository.findQueryWithParameter(searchTerm3);
-    }
-
-    @PutMapping("/event/{id}")
-    public Event update(@PathVariable String id, @RequestBody Map<String, String> body){
-        int blogId = Integer.parseInt(id);
-        // getting event
-        Event event = eventRepository.findById(blogId).get();
-        event.setTitle(body.get("title"));
-        event.setDescription(body.get("description"));
-        return eventRepository.save(event);
-    }
-
-
-
     @DeleteMapping("event/delete/{id}")
     public boolean delete(@PathVariable String id){
         int blogId = Integer.parseInt(id);

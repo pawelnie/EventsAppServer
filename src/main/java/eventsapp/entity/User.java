@@ -39,6 +39,12 @@ public class User {
         this.setPhone(phone);
     }
 
+    public  User(int id, String fireid) {
+        this.setId(id);
+        this.setFireid(fireid);
+
+    }
+
     public int getId() {
         return id;
     }
