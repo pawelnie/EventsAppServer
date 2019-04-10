@@ -34,10 +34,14 @@ public class UserPreferenceController {
         return true;
     }
 
+    /**Get Userpreference by UserID**/
     @GetMapping("/userpreference/{id}")
      public List<Userpreference> userpreferences(@PathVariable String id) {
         int searchTerm = Integer.parseInt(id);
         return userPreferenceRepository.findUserpreferenceByUserID(searchTerm);
     }
+
+
+
 
 }
