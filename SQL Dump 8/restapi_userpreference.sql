@@ -16,7 +16,7 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 --
--- Table structure for table `userpreference`
+-- Table structure for table `Userpreference`
 --
 
 DROP TABLE IF EXISTS `userpreference`;
@@ -35,7 +35,7 @@ CREATE TABLE `userpreference` (
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `userpreference`
+-- Dumping data for table `Userpreference`
 --
 
 LOCK TABLES `userpreference` WRITE;

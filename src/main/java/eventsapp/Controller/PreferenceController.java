@@ -2,10 +2,10 @@ package eventsapp.Controller;
 import eventsapp.Repository.PreferenceRepository;
 import eventsapp.entity.Preference;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
 import java.util.List;
+import java.util.Map;
 
 
 @RestController
@@ -30,5 +30,12 @@ public class PreferenceController {
         return preferenceRepository.findSubscribedPreferencesByUserID(searchTerm);
     }
 
+    /**Create new Preference**/
+    @PostMapping("/preference")
+    public Preference create (@RequestBody Map<String , String> body) {
+        String title = body.get("title");
+        String description = body.get("description");
+        return preferenceRepository.save(new Preference(title, description));
+    }
 
 }
